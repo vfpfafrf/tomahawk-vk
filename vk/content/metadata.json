@@ -1,0 +1,22 @@
+{
+  "author": "Dmitry Ivanov, Krzysztof Klinikowski",
+  "description": "Searches VKontakte (vk.com) for music to play.",
+  "email": "dmitry@daydev.io",
+  "manifest": {
+    "icon": "contents/images/icon.png",
+    "main": "contents/code/vkontakte.js",
+     "resources": [
+      "contents/code/config.ui",
+      "contents/images/icon.png",
+      "contents/code/settings.png"	
+    ],
+    "scripts": null
+  },
+  "name": "vk",
+  "pluginName": "vk",
+  "revision": "1",
+  "timestamp": 1417259703,
+  "type": "resolver/javascript",
+  "version": "0.2",
+  "website": "http://gettomahawk.com"
+}

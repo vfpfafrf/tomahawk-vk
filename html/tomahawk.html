@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <link type="image/x-icon" href="/i/favicon.png" rel="shortcut icon">
+    <link type="image/x-icon" href="/i/favicon.png" rel="icon">
+    <title>Tomahawk / Authorize an application</title>
+
+    <style type="text/css">
+
+        #header {
+            -moz-user-select: none;
+            background: none repeat scroll 0 0 #fff;
+            border-bottom: 1px solid #ccd6dd;
+            color: #292f33;
+            cursor: default;
+            left: 0;
+            min-height: 46px;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: 1500;
+        }
+
+        .body {
+            border: 1px solid #ccd6dd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 960px;
+            background-color: #fff;
+            display: none;
+        }
+
+        .body:after {
+            clear: both;
+            content: ".";
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .information {
+            color: #66757f;
+            font-weight: 300;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #token p {
+            background: none repeat scroll 0 0 #f5f8fa;
+            -moz-user-select: none;
+            border-radius: 4px;
+            color: #8899a6;
+            cursor: default;
+            margin: 10px 0;
+            padding: 15px;
+        }
+
+        #token code {
+            font-family: monospace,monospace;
+            -moz-user-select: text;
+            color: #292f33;
+            cursor: text;
+            display: block;
+            font-size: 10px;
+            font-weight: bold;
+            line-height: 72px;
+            margin: 10px 0 0;
+            text-align: center;
+        }
+
+        body {
+            color: #292f33;
+            font-family: sans-serif;
+            width: 100%;
+            height: 100%;
+            padding-top: 20px;
+            background: none repeat scroll 0 0 #fff;
+            direction: ltr;
+            margin: 0;
+            font-size: 14px;
+            line-height: 18px;
+            overflow-y: scroll;
+        }
+
+
+        #header .bar {
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            text-align: left;
+        }
+        .bar, .body {
+            max-width: 640px;
+            min-width: 240px;
+            width: auto;
+        }
+
+        #header .logo {
+            height: 46px;
+            left: 0;
+            margin: 0;
+            position: absolute;
+            top: 0;
+        }
+        h1 {
+            font-size: 24px;
+            line-height: 0.8;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-rendering: optimizelegibility;
+        }
+
+        html {
+            box-sizing: border-box;
+            padding-top: 46px;
+            color: #aab8c2;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        #page {
+            background: url('/i/bg_wave.gif');
+            width: 100%;
+            height: 100%;
+            padding: 1px;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="http://www.reactivemanifesto.org/">
+        <img src="//d379ifj7s9wntv.cloudfront.net/reactivemanifesto/images/ribbons/we-are-reactive-white-right.png" style="border: 0; position: fixed; right: 0; top:0; z-index: 9000">
+    </a>
+
+  <div id="page">
+    <div id="header">
+        <div class="bar">
+            <h1 class="logo"><a href="http://daydev.io" class="alternate-context"><img src="/i/logo_in_circle.png" width="46"></a></h1>
+        </div>
+    </div>
+
+    <div class="body" id="success">
+        <p class="information">You've granted access to Tomahawk!</p>
+        <div id="token">
+            <p>
+                <span id="code-desc">Next, return to Tomahawk and enter this TOKEN to complete the authorization:</span>
+                <code id="code"></code>
+            </p>
+        </div>
+    </div>
+
+      <div class="body" id="fail">
+          <p id="information">Error while granted access to Tomahawk :(</p>
+      </div>
+  </div>
+
+<script type="text/javascript">
+    var hash = window.location.hash.substring(1);
+
+    var qs = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=', 2);
+            if (p.length == 1)
+                b[p[0]] = "";
+            else
+                b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(hash.split('&'));
+
+
+    console.log(hash);
+    var token = qs["access_token"];
+    var userId = qs["user_id"];
+    var error = qs["error"];
+
+    if (token != "" && userId != "") {
+        document.getElementById("code").innerHTML = userId + "|" + token;
+        document.getElementById("success").style.display = "block";
+    } else {
+        document.getElementById("fail").style.display = "block";
+    }
+</script>
+</body>
+</html>
