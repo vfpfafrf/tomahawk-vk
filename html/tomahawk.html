@@ -187,7 +187,7 @@
     var userId = qs["user_id"];
     var error = qs["error"];
 
-    if (token != "" && userId != "") {
+    if (token && token != "" && userId && userId != "") {
         document.getElementById("code").innerHTML = userId + "|" + token;
         document.getElementById("success").style.display = "block";
     } else {
