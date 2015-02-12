@@ -11,8 +11,8 @@ vk.com plugin for tomahawk-player
 
 You can download binary packages from [bintray](https://bintray.com/vfpfafrf/generic/tomahawk-vk/view)
 
-### Latest verison 0.2
-[Donwload from bintray 0.2](http://dl.bintray.com/vfpfafrf/generic/vk-0.2.axe)
+### Latest verison 0.3
+[Donwload from bintray 0.3](http://dl.bintray.com/vfpfafrf/generic/vk-0.3.axe)
 
 ### Note
 

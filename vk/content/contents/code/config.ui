@@ -51,7 +51,7 @@
       </size>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You need vk.com auth token, open  &lt;a href=&quot;https://oauth.vk.com/authorize?client_id=4655935&amp;scope=audio&amp;redirect_uri=http://daydev.io/tomahawk.html&amp;display=page&amp;response_type=token&quot;&gt;request token url&lt;/span&gt;&lt;/a&gt; to get it&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You need vk.com auth token, open  &lt;a href=&quot;https://oauth.vk.com/authorize?client_id=4655935&amp;scope=offline,audio&amp;redirect_uri=http://daydev.io/tomahawk.html&amp;display=page&amp;response_type=token&quot;&gt;request token url&lt;/span&gt;&lt;/a&gt; to get it&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
